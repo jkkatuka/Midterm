@@ -33,4 +33,4 @@ angular.module('carsale', [])
     };
     $scope.getAll();
   }
-]);
+  ]);
