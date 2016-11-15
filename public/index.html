@@ -32,7 +32,7 @@
 
     <div id="output" ng-repeat="car in cars | orderBy: '-upvotes' | orderBy: '-make' | orderBy: '-model'">
       <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(car)"></span>
-      {{car.Url}} -- Car Name: {{car.make}} --  Model: {{car.model}} --  Year: {{car.year}} -- Miles: {{car.miles}} -- UpVotes: {{car.upvotes}}
+      <img id='avatar' ng-src="{{car.Url}}"/> -- Car Name: {{car.make}} --  Model: {{car.model}} --  Year: {{car.year}} -- Miles: {{car.miles}} -- UpVotes: {{car.upvotes}}
       <span class="glyphicon glyphicon-remove" ng-click="delete(car)"></span>
     </div>
 
