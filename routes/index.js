@@ -40,7 +40,7 @@ router.put('/cars/:carid/upvote', function(req, res, next) {
   });
 });
 
-router.delete('/cars/:car', function(req, res) {
+router.delete('/cars/:carid', function(req, res) {
   console.log("in Delete");
   req.car.remove();
   res.json(req.car);
