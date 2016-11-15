@@ -25,9 +25,11 @@
 
       <div><button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge w3-text-shadow" type="submit">Add Dog</button></div>
       <br><br>
+
       <div ng-repeat="dog in dogs | orderBy: '-upvotes' | orderBy: '-breed'">
+
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(dog)"></span>
-        {{dog.name}} {{dog.breed}} - upvotes: {{dog.upvotes}}
+        {{dog.name}}  {{dog.breed}} - upvotes: {{dog.upvotes}}
       </div>
     </div>
   </div>
