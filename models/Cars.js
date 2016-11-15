@@ -4,7 +4,7 @@ var CarSchema = new mongoose.Schema({
 	model: String,
 	year: Number,
 	miles: Number,
-	pic: String,
+	Url: String,
 	upvotes: {type: Number, default: 0},
 });
 
