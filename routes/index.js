@@ -32,10 +32,19 @@ router.get('/cars/:carid', function(req, res) {
   res.json(req.car);
 });
 
+
 router.put('/cars/:carid/upvote', function(req, res, next) {
   req.car.upvote(function(err, car){
     if (err) { return next(err); }
     res.json(car);
   });
 });
+
+router.delete('/cars/:carid', function(req, res, next) {
+  Car.findById(car._id, function (err, offer) {
+    if(err) { throw err; }
+    res.sendStatus(200);
+  })
+});
+
 module.exports = router;

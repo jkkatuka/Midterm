@@ -26,6 +26,14 @@ angular.module('carsale', [])
       $scope.upvote(car);
     };
 
+    $scope.delete = function(id) {
+      console.log("delete: " + car._id);
+      var url = "/cars/" + car._id;
+      return $http.delete(url).success(function(response) {
+        $scope.getAll();
+      });
+    };
+
     $scope.getAll = function() {
       return $http.get('/cars').success(function(data){
         angular.copy(data, $scope.cars);
