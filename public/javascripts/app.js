@@ -16,7 +16,7 @@ angular.module('carsale', [])
     };
 
     $scope.upvote = function(car) {
-      return $http.put('/cars/' + car._id + '/UpVote')
+      return $http.put('/cars/' + car._id + '/upvote')
       .success(function(data){
         console.log("upvote worked");
         car.upvotes = data.upvotes;
@@ -34,4 +34,4 @@ angular.module('carsale', [])
     };
     $scope.getAll();
   }
-  ]);
+]);
