@@ -26,7 +26,7 @@ angular.module('carsale', [])
       $scope.upvote(car);
     };
 
-    $scope.delete = function(id) {
+    $scope.delete = function(car) {
       console.log("delete: " + car._id);
       var url = "/cars/" + car._id;
       return $http.delete(url).success(function(response) {
