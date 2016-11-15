@@ -41,7 +41,7 @@ router.put('/cars/:carid/upvote', function(req, res, next) {
 });
 
 router.delete('/cars/:carid', function(req, res, next) {
-  Car.findByIdAndRemove(car._id, function (err, offer) {
+  Car.findByIdAndRemove(req.params.id, function (err, offer) {
     if(err) { throw err; }
     res.sendStatus(200);
   })
