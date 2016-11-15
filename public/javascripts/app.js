@@ -3,7 +3,7 @@ angular.module('carsale', [])
   '$scope','$http',
   function($scope,$http){
     $scope.cars = [];
-    $scope.addCars = function() {
+    $scope.addCar = function() {
       var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, pic:$scope.pic,upvotes:0};
       $scope.make='';
       $scope.model='';
