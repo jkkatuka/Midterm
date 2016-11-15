@@ -22,7 +22,7 @@ router.param('carid', function(req, res, next, id) {
   var query = Car.findById(id);
   query.exec(function (err, car){
     if (err) { return next(err); }
-    if (!dog) { return next(new Error("can't find car")); }
+    if (!car) { return next(new Error("can't find car")); }
     req.car = car;
     return next();
   });
