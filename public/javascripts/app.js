@@ -19,7 +19,6 @@ angular.module('carsale', [])
       return $http.put('/cars/' + car._id + '/upvote').success(function(data){
         console.log("upvote worked");
         car.upvotes = data.upvotes;
-        car.upvotes += 1;
       });
     };
 
