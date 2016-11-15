@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>DogShow</title>
+  <title>CarSales</title>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -8,27 +8,31 @@
   <script src="javascripts/app.js"></script>
 
 </head>
-<body ng-app="dogshow" ng-controller="MainCtrl">
+<body ng-app="carsale" ng-controller="MainCtrl">
   <div class="w3-container">
     
 
       <div id="title" class="w3-container"> 
-        <h1>Dog Show </h1>
+        <h1>BYU Car Sales </h1>
       </div>
 
       <div class="w3-container w3-section">
-        <form class="" ng-submit="addDog()">
-          <p><label>Dog Name: </label><input type="text" ng-model="name"></input></p>
-          <p><label>Breed: </label><input type="text" ng-model="breed"></input></p>
-          <p><button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge w3-text-shadow" type="submit">Add Dog</button></p>
+        <form class="" ng-submit="addCar()">
+          <p><label>Car Make: </label><input type="text" ng-model="make"></input></p>
+          <p><label>Model: </label><input type="text" ng-model="model"></input></p>
+          <p><label>Year: </label><input type="text" ng-model="year"></input></p>
+          <p><label>Miles: </label><input type="text" ng-model="miles"></input></p>
+          <p><label>Picture URL: </label><input type="text" ng-model="pic"></input></p>
+
+          <p><button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge w3-text-shadow" type="submit">Add Car</button></p>
 	</form>
       </div>
 
       <br>
 	
-      <div id="output" ng-repeat="dog in dogs | orderBy: '-upvotes' | orderBy: '-breed'">
-        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(dog)"></span>
-		Dog Name: {{dog.name}} --  Breed: {{dog.breed}}  --  UpVotes: {{dog.upvotes}}
+      <div id="output" ng-repeat="car in cars | orderBy: '-upvotes' | orderBy: '-make' | orderBy: '-model'">
+        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(car)"></span>
+		      {{car.pic}} -- Car Name: {{car.name}} --  Model: {{car.breed}} --  Year: {{car.year}} --  UpVotes: {{dog.upvotes}}
       </div>
    
   </div>

@@ -1,8 +1,7 @@
 body {
-	background-image: url(../Images/dog.jpg);
+	background-image: url("http://cdn.pinthiscars.com/images/audi-logo-vector-wallpaper-8.jpg");
  	background-repeat: no-repeat;
  	background-attachment: fixed;
-  	background-position: right;
 	padding:50px;
 	text-align:left;
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

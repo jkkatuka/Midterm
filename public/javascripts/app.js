@@ -1,29 +1,34 @@
-angular.module('dogshow', [])
+angular.module('carsale', [])
 .controller('MainCtrl', [
   '$scope','$http',
   function($scope,$http){
-    $scope.dogs = [];
-    $scope.addDog = function() {
-      var newdog = {name:$scope.name, breed:$scope.breed,upvotes:0};
-      $scope.name='';
-      $scope.breed='';
-      $http.post('/dogs', newdog).success(function(data){
-        $scope.dogs.push(data);
+    $scope.cars = [];
+    $scope.addCars = function() {
+      var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, pic:$scope.pic,upvotes:0};
+      $scope.make='';
+      $scope.model='';
+      $scope.year='';
+      $scope.miles='';
+      $scope.pic='';
+      $http.post('/cars', newcar).success(function(data){
+        $scope.cars.push(data);
       });
     };
-    $scope.upvote = function(dog) {
-      return $http.put('/dogs/' + dog._id + '/upvote')
+
+    $scope.upvote = function(car) {
+      return $http.put('/cars/' + car._id + '/upvote')
         .success(function(data){
           console.log("upvote worked");
-          dog.upvotes = data.upvotes;
+          car.upvotes = data.upvotes;
         });
     };
-	$scope.incrementUpvotes = function(dog) {
-	  $scope.upvote(dog);
+
+	$scope.incrementUpvotes = function(car) {
+	  $scope.upvote(car);
     };
     $scope.getAll = function() {
-      return $http.get('/dogs').success(function(data){
-        angular.copy(data, $scope.dogs);
+      return $http.get('/cars').success(function(data){
+        angular.copy(data, $scope.cars);
       });
     };
     $scope.getAll();

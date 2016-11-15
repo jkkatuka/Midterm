@@ -1,41 +1,41 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Dog = mongoose.model('Dog');
+var Car = mongoose.model('Car');
 
-router.get('/dogs', function(req, res, next) {
-  Dog.find(function(err, dogs){
+router.get('/cars', function(req, res, next) {
+  Car.find(function(err, cars){
     if(err){ return next(err); }
-    res.json(dogs);
+    res.json(cars);
   });
 });
 
-router.post('/dogs', function(req, res, next) {
-  var dog = new Dog(req.body);
-  dog.save(function(err, dog){
+router.post('/cars', function(req, res, next) {
+  var car = new Car(req.body);
+  car.save(function(err, car){
     if(err){ return next(err); }
-    res.json(dog);
+    res.json(car);
   });
 });
 
-router.param('dogid', function(req, res, next, id) {
-  var query = Dog.findById(id);
-  query.exec(function (err, dog){
+router.param('carid', function(req, res, next, id) {
+  var query = Car.findById(id);
+  query.exec(function (err, car){
     if (err) { return next(err); }
-    if (!dog) { return next(new Error("can't find dog")); }
-    req.dog = dog;
+    if (!dog) { return next(new Error("can't find car")); }
+    req.car = car;
     return next();
   });
 });
 
-router.get('/dogs/:dogid', function(req, res) {
-  res.json(req.dog);
+router.get('/cars/:carid', function(req, res) {
+  res.json(req.car);
 });
 
-router.put('/dogs/:dogid/upvote', function(req, res, next) {
-  req.dog.upvote(function(err, dog){
+router.put('/cars/:carid/upvote', function(req, res, next) {
+  req.dog.upvote(function(err, car){
     if (err) { return next(err); }
-    res.json(dog);
+    res.json(car);
   });
 });
 module.exports = router;
