@@ -4,12 +4,12 @@ angular.module('carsale', [])
   function($scope,$http){
     $scope.cars = [];
     $scope.addCar = function() {
-      var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, pic:$scope.pic, upvotes:0};
+      var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, Url:$scope.Url, upvotes:0};
       $scope.make='';
       $scope.model='';
       $scope.year='';
       $scope.miles='';
-      $scope.pic='';
+      $scope.Url='';
       $http.post('/cars', newcar).success(function(data){
         $scope.cars.push(data);
       });
