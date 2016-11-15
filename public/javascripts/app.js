@@ -15,7 +15,15 @@ angular.module('carsale', [])
       });
     };
 
-    $scope.upvote = function(car) {
+    
+
+   $scope.delete = function(car){
+	return $http.delete("/cars/" + car._id).success(function(data){
+	console.log("delete worked");
+	});
+   };
+
+   $scope.upvote = function(car) {
       return $http.put('/cars/' + car._id + '/upvote')
         .success(function(data){
           console.log("upvote worked");
