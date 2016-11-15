@@ -10,7 +10,7 @@
 </head>
 <body ng-app="carsale" ng-controller="MainCtrl">
   <div class="w3-container">
-    
+
 
     <div id="title" class="w3-container"> 
       <h1>BYU Car Sales </h1>
@@ -29,13 +29,13 @@
     </div>
 
     <br>
-    
+
     <div id="output" ng-repeat="car in cars | orderBy: '-upvotes' | orderBy: '-make' | orderBy: '-model'">
       <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(car)"></span>
       {{car.pic}} -- Car Name: {{car.make}} --  Model: {{car.model}} --  Year: {{car.year}} -- Miles: {{car.miles}} -- UpVotes: {{car.upvotes}}
-      <span class ng-click="delete(car)">X</span>
+      <span class="glyphicon glyphicon-remove" ng-click="delete(car)"></span>
     </div>
-    
+
   </div>
 </body>
 </html>
