@@ -30,6 +30,7 @@ angular.module('carsale', [])
       console.log("delete: " + car._id);
       var url = "/cars/" + car._id;
       return $http.delete(url).success(function(response) {
+        console.log(response)
         $scope.getAll();
       });
     };
