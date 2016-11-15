@@ -4,7 +4,7 @@ angular.module('carsale', [])
   function($scope,$http){
     $scope.cars = [];
     $scope.addCar = function() {
-      var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, pic:$scope.pic,upvotes:0};
+      var newcar = {make:$scope.make, model:$scope.model, year:$scope.year, miles:$scope.miles, pic:$scope.pic, upvotes:0};
       $scope.make='';
       $scope.model='';
       $scope.year='';
@@ -26,6 +26,7 @@ angular.module('carsale', [])
 	$scope.incrementUpvotes = function(car) {
 	  $scope.upvote(car);
     };
+
     $scope.getAll = function() {
       return $http.get('/cars').success(function(data){
         angular.copy(data, $scope.cars);
