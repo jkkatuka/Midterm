@@ -26,13 +26,13 @@ angular.module('carsale', [])
       $scope.upvote(car);
     };
 
+
     $scope.delete = function(car) {
-      console.log("delete: " + car._id);
-      var url = "/cars/" + car._id;
-      return $http.delete(url).success(function(response) {
-        console.log(response)
-        $scope.getAll();
+      $http.delete('/cars/' + car._id )
+      .success(function(data){
+        console.log("delete worked");
       });
+      $scope.getAll();
     };
 
     $scope.getAll = function() {

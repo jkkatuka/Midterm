@@ -40,11 +40,10 @@ router.put('/cars/:carid/upvote', function(req, res, next) {
   });
 });
 
-router.delete('/cars/:carid', function(req, res, next) {
-  Car.findByIdAndRemove(req.params.id, function (err, offer) {
-    if(err) { throw err; }
-    res.sendStatus(200);
-  })
+router.delete('/cars/:car', function(req, res) {
+  console.log("in Delete");
+  req.comment.remove();
+  res.json(req.car);
 });
 
 module.exports = router;
