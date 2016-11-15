@@ -2,8 +2,9 @@ body {
 	background-image: url(../Images/dog.jpg);
  	background-repeat: no-repeat;
  	background-attachment: fixed;
- 	background-position: right;
-  	padding: 50px;
+  	background-position: right;
+	padding:50px;
+	text-align:left;
   	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   	color: white;
 }
@@ -13,9 +14,18 @@ label{
     float: left;
     clear: left;
     width: 100px;
-    
+    color: white;
+	
 }
 input {
   display: inline-block;
   
+}
+
+#title{
+   color:white;
+}
+
+#output{
+	color:white;	
 }

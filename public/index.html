@@ -9,29 +9,28 @@
 
 </head>
 <body ng-app="dogshow" ng-controller="MainCtrl">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+  <div class="w3-container">
+    
 
-      <div class="w3-container"> 
+      <div id="title" class="w3-container"> 
         <h1>Dog Show </h1>
       </div>
 
       <div class="w3-container w3-section">
-        <form class="" ng-submit="addDog()" style = "margin-top30px;">
+        <form class="" ng-submit="addDog()">
           <p><label>Dog Name: </label><input type="text" ng-model="name"></input></p>
           <p><label>Breed: </label><input type="text" ng-model="breed"></input></p>
-        </form>
+          <p><button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge w3-text-shadow" type="submit">Add Dog</button></p>
+	</form>
       </div>
 
-      <div><button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge w3-text-shadow" type="submit">Add Dog</button></div>
-      <br><br>
-
-      <div ng-repeat="dog in dogs | orderBy: '-upvotes' | orderBy: '-breed'">
-
+      <br>
+	
+      <div id="output" ng-repeat="dog in dogs | orderBy: '-upvotes' | orderBy: '-breed'">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(dog)"></span>
-        {{dog.name}}  {{dog.breed}} - upvotes: {{dog.upvotes}}
+		Dog Name: {{dog.name}} --  Breed: {{dog.breed}}  --  UpVotes: {{dog.upvotes}}
       </div>
-    </div>
+   
   </div>
 </body>
 </html>
