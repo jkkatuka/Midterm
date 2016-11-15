@@ -15,24 +15,16 @@ angular.module('carsale', [])
       });
     };
 
-    
-
-   $scope.delete = function(car){
-	return $http.delete("/cars/" + car._id).success(function(data){
-	console.log("delete worked");
-	});
-   };
-
-   $scope.upvote = function(car) {
+    $scope.upvote = function(car) {
       return $http.put('/cars/' + car._id + '/upvote')
-        .success(function(data){
-          console.log("upvote worked");
-          car.upvotes = data.upvotes;
-        });
+      .success(function(data){
+        console.log("upvote worked");
+        car.upvotes = data.upvotes;
+      });
     };
 
-	$scope.incrementUpvotes = function(car) {
-	  $scope.upvote(car);
+    $scope.incrementUpvotes = function(car) {
+      $scope.upvote(car);
     };
 
     $scope.getAll = function() {
@@ -42,4 +34,4 @@ angular.module('carsale', [])
     };
     $scope.getAll();
   }
-]);
+  ]);
