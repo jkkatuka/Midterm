@@ -1,0 +1,21 @@
+body {
+	background-image: url(../Images/dog.jpg);
+ 	background-repeat: no-repeat;
+ 	background-attachment: fixed;
+ 	background-position: right;
+  	padding: 50px;
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  	color: white;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+    
+}
+input {
+  display: inline-block;
+  
+}
