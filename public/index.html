@@ -32,7 +32,7 @@
 	
       <div id="output" ng-repeat="car in cars | orderBy: '-upvotes' | orderBy: '-make' | orderBy: '-model'">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(car)"></span>
-		      {{car.pic}} -- Car Name: {{car.name}} --  Model: {{car.breed}} --  Year: {{car.year}} -- Miles: {{car.miles}} -- UpVotes: {{dog.upvotes}}
+		      {{car.pic}} -- Car Name: {{car.make}} --  Model: {{car.model}} --  Year: {{car.year}} -- Miles: {{car.miles}} -- UpVotes: {{dog.upvotes}}
       </div>
    
   </div>
