@@ -42,7 +42,7 @@ router.put('/cars/:carid/upvote', function(req, res, next) {
 
 router.delete('/cars/:car', function(req, res) {
   console.log("in Delete");
-  req.comment.remove();
+  req.car.remove();
   res.json(req.car);
 });
 
