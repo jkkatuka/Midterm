@@ -16,6 +16,7 @@ angular.module('carsale', [])
     };
 
     $scope.upvote = function(car) {
+      console.log("Before return https");
       return $http.put('/cars/' + car._id + '/upvote')
       .success(function(data){
         console.log("upvote worked");
