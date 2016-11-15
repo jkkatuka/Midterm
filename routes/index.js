@@ -33,7 +33,7 @@ router.get('/cars/:carid', function(req, res) {
 });
 
 router.put('/cars/:carid/upvote', function(req, res, next) {
-  req.dog.upvote(function(err, car){
+  req.car.upvote(function(err, car){
     if (err) { return next(err); }
     res.json(car);
   });
